@@ -1154,24 +1154,29 @@ if (tableNumber) {
 }
 </script>
   
-  <script>
-const urlParams = new URLSearchParams(window.location.search);
-const table = urlParams.get("table");
+<script>
+document.addEventListener("DOMContentLoaded", function() {
 
-if (table) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const table = urlParams.get("table");
 
-  const tableSelect = document.getElementById("table-select");
+  if (table) {
 
-  if (tableSelect) {
-    tableSelect.value = table;
+    const tableSelect = document.getElementById("table-select");
+
+    if (tableSelect) {
+      tableSelect.value = table;
+    }
+
   }
 
-}
+});
 </script>
  </body>
  
 
 </html>
+
 
 
 
