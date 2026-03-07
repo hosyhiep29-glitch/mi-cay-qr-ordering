@@ -1153,7 +1153,19 @@ if (tableNumber) {
     document.body.prepend(tableDisplay);
 }
 </script>
+  <script>
+const urlParams = new URLSearchParams(window.location.search);
+const table = urlParams.get("table");
+
+if (table) {
+  const tableSelect = document.querySelector("select");
+  if (tableSelect) {
+    tableSelect.value = "Bàn " + table;
+  }
+}
+</script>
  </body>
  
 
 </html>
+
