@@ -1153,19 +1153,29 @@ if (tableNumber) {
     document.body.prepend(tableDisplay);
 }
 </script>
-  <script>
+<script>
 const urlParams = new URLSearchParams(window.location.search);
 const table = urlParams.get("table");
 
 if (table) {
+
   const tableSelect = document.querySelector("select");
+
   if (tableSelect) {
     tableSelect.value = "Bàn " + table;
   }
+
+  const tableLabel = document.querySelector(".table-number");
+
+  if (tableLabel) {
+    tableLabel.innerText = "Bạn đang ở bàn số: " + table;
+  }
+
 }
 </script>
  </body>
  
 
 </html>
+
 
