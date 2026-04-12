@@ -846,6 +846,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const tableNumber = urlParams.get("table");
 
+
+
 // Nếu có số bàn thì hiển thị
 if (tableNumber) {
     const tableDisplay = document.createElement("div");
@@ -857,4 +859,14 @@ if (tableNumber) {
     tableDisplay.style.fontSize = "18px";
 
     document.body.prepend(tableDisplay);
+
+    const tableSelect = document.getElementById("table-select");
+    if (tableSelect) {
+        tableSelect.value = tableNumber;
+        tableSelect.disabled = true; // khóa luôn (nên có)
+    }
+
+    // 💾 Lưu lại
+    localStorage.setItem("table", tableNumber);
+}
 }
